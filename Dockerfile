@@ -12,7 +12,8 @@ RUN apt-get -qq update && apt-get install -y --no-install-recommends \
     g++ \
 
     # Other required dependencies
-    git
+    git \
+    ca-certificates \
 
     # Get beaker browser source from https://github.com/beakerbrowser/
     #&& git clone https://github.com/beakerbrowser/beaker.git \
