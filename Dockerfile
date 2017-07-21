@@ -49,4 +49,4 @@ RUN git checkout `git tag | sort -n | tail -1`
 RUN npm install
 #RUN npm run burnthemall
 #RUN npm run rebuild #see https://github.com/electron/electron/issues/5851
-RUN npm start
+CMD npm start
