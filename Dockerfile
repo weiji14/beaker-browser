@@ -36,8 +36,8 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
     #&& npm install npm@latest -g
 
 # Setup beaker user and workdir
-#RUN useradd -d /home/beaker -m beaker
-#USER beaker
+RUN useradd -d /home/beaker -m beaker
+USER beaker
 WORKDIR /home/beaker
 
 # Git clone from beaker's github source and use latest tagged release
@@ -47,6 +47,7 @@ RUN git checkout `git tag | sort -n | tail -1`
 
 # Build and install beaker browser using npm
 RUN npm install
-#RUN npm run burnthemall
+RUN npm run burnthemall
 #RUN npm run rebuild #see https://github.com/electron/electron/issues/5851
-CMD npm start
+EXPOSE 80
+CMD ["npm", "start"]
