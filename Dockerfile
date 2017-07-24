@@ -36,8 +36,8 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
     #&& npm install npm@latest -g
 
 # Setup beaker user and workdir
-RUN useradd -d /home/beaker -m beaker
-USER beaker
+#RUN useradd -d /home/beaker -m beaker
+#USER beaker
 WORKDIR /home/beaker
 
 # Git clone from beaker's github source and use latest tagged release
